@@ -233,7 +233,7 @@ p {
 
 .section-heading > h2 {
     font-weight: 300;
-    color: #5b32b4;
+    color: #fb397d;
     font-size: 48px;
     margin: 0;
 }
@@ -378,7 +378,7 @@ p {
     color: #fff;
     font-weight: 500;
     display: inline-block;
-    border: 2px solid #a883e9;
+    border: 2px solid #8adfd2;
     height: 50px;
     min-width: 178px;
     line-height: 46px;
@@ -398,7 +398,7 @@ p {
 /* stcicky css */
 
 .header_area.sticky {
-    background-color: #884bdf;
+    background-color: #4abdac;
     -webkit-box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     height: 70px;
@@ -465,7 +465,7 @@ p {
 }
 
 .get-start-area .email {
-    background: #9572e8;
+    background: #fb397d;
     height: 50px;
     max-width: 260px;
     border: none;
@@ -514,7 +514,7 @@ p {
 }
 
 .get-start-area .submit:hover {
-    background: #6f52e5;
+    background: #4abdac;
     color: #fff;
     -webkit-transition-duration: 500ms;
     -o-transition-duration: 500ms;
@@ -552,7 +552,7 @@ p {
 
 .single-special > h4 {
     font-size: 22px;
-    color: #5b32b4;
+    color: #4abdac;
 }
 
 .single-icon {
@@ -561,7 +561,7 @@ p {
 
 .single-special > h4 {
     font-size: 22px;
-    color: #5b32b4;
+    color: #4abdac;
     margin-bottom: 15px;
 }
 
@@ -576,7 +576,7 @@ p {
 }
 
 .special_description_content > h2 {
-    color: #5b32b4;
+    color: #4abdac;
     font-size: 48px;
     margin-bottom: 30px;
 }
@@ -680,7 +680,7 @@ p {
 
 .single-feature > h5 {
     font-size: 22px;
-    color: #5b32b4;
+    color: #01995d;
 }
 
 .single-feature > p {
@@ -737,7 +737,7 @@ p {
 }
 
 .video-area .video-play-btn a:hover {
-    background-color: #a865e1;
+    background-color: #4abdac;
     color: #fff;
 }
 
@@ -748,12 +748,12 @@ p {
 .cool_facts_area {
     position: relative;
     z-index: auto;
-    background: #a865e1;
-    background: -webkit-linear-gradient(to left, #7873ed, #a865e1);
-    background: -webkit-linear-gradient(right, #7873ed, #a865e1);
-    background: -webkit-gradient(linear, right top, left top, from(#7873ed), to(#a865e1));
-    background: -o-linear-gradient(right, #7873ed, #a865e1);
-    background: linear-gradient(to left, #7873ed, #a865e1);
+    background: #4abdac;
+    background: -webkit-linear-gradient(to left, #53cbb9, #4abdac);
+    background: -webkit-linear-gradient(right, #53cbb9, #4abdac);
+    background: -webkit-gradient(linear, right top, left top, from(#53cbb9), to(#4abdac));
+    background: -o-linear-gradient(right, #53cbb9, #4abdac);
+    background: linear-gradient(to left, #53cbb9, #4abdac);
     padding: 180px 0 80px 0;
     top: -100px;
 }
@@ -860,7 +860,7 @@ p {
 }
 
 .single-price-plan .package-plan > h5 {
-    color: #5b32b4;
+    color: #4abdac;
     font-size: 18px;
 }
 
@@ -906,7 +906,7 @@ p {
 .single-price-plan.active .package-plan,
 .single-price-plan.active .plan-button > a,
 .single-price-plan:hover .plan-button > a {
-    background-color: #a865e1;
+    background-color: #a4d2c0;
 }
 
 .single-price-plan.active .package-plan .ca-price > h4,
@@ -921,7 +921,7 @@ p {
 -------------------------- */
 
 .clients-feedback-area .client-name > h5 {
-    color: #5b32b4;
+    color: #fb397d;
     font-size: 22px;
     margin-top: 5px;
 }
@@ -940,7 +940,7 @@ p {
 
 .clients-feedback-area .client > i {
     font-size: 48px;
-    color: #897ceb;
+    color: #fb397d;
     margin-bottom: 30px;
 }
 
@@ -1034,12 +1034,12 @@ p {
 -------------------------- */
 
 .our-monthly-membership {
-    background: #a865e1;
-    background: -webkit-linear-gradient(to left, #7873ed, #a865e1);
-    background: -webkit-linear-gradient(right, #7873ed, #a865e1);
-    background: -webkit-gradient(linear, right top, left top, from(#7873ed), to(#a865e1));
-    background: -o-linear-gradient(right, #7873ed, #a865e1);
-    background: linear-gradient(to left, #7873ed, #a865e1);
+    background: #4abdac;
+    background: -webkit-linear-gradient(to left, #53cbb9, #4abdac);
+    background: -webkit-linear-gradient(right, #53cbb9, #4abdac);
+    background: -webkit-gradient(linear, right top, left top, from(#53cbb9), to(#4abdac));
+    background: -o-linear-gradient(right, #53cbb9, #4abdac);
+    background: linear-gradient(to left, #53cbb9, #4abdac);
 }
 
 .membership-description > h2 {
@@ -1065,7 +1065,7 @@ p {
 }
 
 .get-started-button > a:hover {
-    background: #5b32b4;
+    background: #fb397d;
     color: #fff;
     -webkit-transition-duration: 500ms;
     -o-transition-duration: 500ms;
@@ -1093,11 +1093,11 @@ p {
 
 .member-text > h4 {
     font-size: 22px;
-    color: #5b32b4;
+    color: #fb397d;
 }
 
 .member-text > p {
-    color: #b5aec4;
+    color: #e2a5a8;
     margin-bottom: 0;
 }
 
@@ -1107,7 +1107,7 @@ p {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(105, 75, 228, 0.8);
+    background-color: rgba(244, 233, 91, 0.5);
     border-radius: 30px 30px 30px 0;
     opacity: 0;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
@@ -1142,7 +1142,7 @@ p {
 .team-social-icon > a {
     font-size: 14px;
     color: #fff;
-    background: #9a81d7;
+    background: #ffb119;
     height: 40px;
     width: 40px;
     line-height: 40px;
@@ -1170,7 +1170,7 @@ p {
 .address-text > p > span,
 .phone-text > p > span,
 .email-text > p > span {
-    color: #5b32b4;
+    color: #fb397d;
 }
 
 .footer-contact-area .line-shape {
@@ -1211,7 +1211,7 @@ p {
 }
 
 .btn.submit-btn:hover {
-    background: #5b32b4;
+    background: #4abdac;
     color: #fff;
     -webkit-transition-duration: 500ms;
     -o-transition-duration: 500ms;
@@ -1231,13 +1231,13 @@ p {
 -------------------------- */
 
 .footer-text > h2 {
-    color: #5b32b4;
+    color: #fb397d;
     font-size: 72px;
     font-weight: 700;
 }
 
 .footer-social-icon > a > i {
-    background: #9b69e4;
+    background: #4abdac;
     font-size: 14px;
     color: #ffffff;
     height: 40px;
