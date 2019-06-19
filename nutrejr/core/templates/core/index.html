@@ -141,13 +141,13 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="{% static '/special_description_img' %}">
-                            <img src="{% static '/img/bg-img/special.png' %}" alt="">
+                            <img src="{{ apresentacao.imagem.url }}"  alt="">
                         </div>
                     </div>
                     <div class="col-lg-6 col-xl-5 ml-xl-auto">
                         <div class="special_description_content">
                             <!--<h2>Our Best Propositions for You!</h2>-->
-                            <p>Lorem ipsum sapien luctus vehicula magna dapibus proin nisl sed, pretium non lacinia conubia posuere at habitasse sem, amet litora id quisque turpis metus scelerisque ante. leo purus rutrum urna orci dictum curae torquent metus quisque lobortis, sit aliquet facilisis magna in facilisis pharetra vulputate. conubia placerat ornare purus vel accumsan placerat rhoncus lorem turpis, hendrerit a enim suspendisse praesent habitant habitasse gravida ac, mi scelerisque tempor vulputate viverra consectetur scelerisque viverra. porttitor dictum porttitor sociosqu conubia dui, varius condimentum eu curabitur, auctor mauris non lectus. mollis pharetra libero velit condimentum dictumst senectus sollicitudin ut, placerat est habitasse himenaeos dolor donec libero consequat at, fusce accumsan tempor scelerisque vestibulum inceptos felis.</p>
+                            {{apresentacao.descricao | safe}}
                             <!--
                             <div class="app-download-area">
                                 <div class="app-download-btn wow fadeInUp" data-wow-delay="0.2s">
@@ -187,7 +187,7 @@
                 <div class="col-12">
                     <!-- Heading Text -->
                     <div class="section-heading text-center">
-                        <h2>Serviços</h2>
+                        <h2>Carta de Serviços</h2>
                         <div class="line-shape"></div>
                     </div>
                 </div>
@@ -195,53 +195,17 @@
 
             <div class="row">
                 <!-- Single Feature Start -->
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="single-feature">
-                        <i class="ti-user" aria-hidden="true"></i>
-                        <h5>Carta de Serviço</h5>
-                        <p>Lorem ipsum sapien luctus vehicula magna dapibus proin nisl sed.</p>
+                {% if servico %}
+                    {% for s in servico %}
+                    <div class="col-12 col-sm-6 col-lg-4">
+                        <div class="single-feature">
+                            <i class="{{s.icon}}" aria-hidden="true"></i>
+                            <h5>{{s.titulo}}</h5>
+                            {{s.descricao | safe}}
+                        </div>
                     </div>
-                </div>
-                <!-- Single Feature Start -->
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="single-feature">
-                        <i class="ti-pulse" aria-hidden="true"></i>
-                        <h5>Carta de Serviço</h5>
-                        <p>Lorem ipsum sapien luctus vehicula magna dapibus proin nisl sed.</p>
-                    </div>
-                </div>
-                <!-- Single Feature Start -->
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="single-feature">
-                        <i class="ti-dashboard" aria-hidden="true"></i>
-                        <h5>Carta de Serviço</h5>
-                        <p>Lorem ipsum sapien luctus vehicula magna dapibus proin nisl sed.</p>
-                    </div>
-                </div>
-                <!-- Single Feature Start -->
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="single-feature">
-                        <i class="ti-heart" aria-hidden="true"></i>
-                        <h5>Carta de Serviço</h5>
-                        <p>Lorem ipsum sapien luctus vehicula magna dapibus proin nisl sed.</p>
-                    </div>
-                </div>
-                <!-- Single Feature Start -->
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="single-feature">
-                        <i class="ti-comments-smiley" aria-hidden="true"></i>
-                        <h5>Carta de Serviço</h5>
-                        <p>Lorem ipsum sapien luctus vehicula magna dapibus proin nisl sed.</p>
-                    </div>
-                </div>
-                <!-- Single Feature Start -->
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="single-feature">
-                        <i class="ti-apple" aria-hidden="true"></i>
-                        <h5>Carta de Serviço</h5>
-                        <p>Lorem ipsum sapien luctus vehicula magna dapibus proin nisl sed.</p>
-                    </div>
-                </div>
+                    {% endfor %}
+                {% endif %}
             </div>
 
         </div>
@@ -254,9 +218,9 @@
             <div class="row">
                 <div class="col-12">
                     <!-- Video Area Start -->
-                    <div class="video-area" style="background-image: url({% static '/img/bg-img/video.jpg' %});">
+                    <div class="video-area" style="background-image: url({{video.imagem.url}});">
                         <div class="video-play-btn">
-                            <a href="https://www.youtube.com/watch?v=f5BBJ4ySgpo" class="video_btn"><i class="fa fa-play" aria-hidden="true"></i></a>
+                            <a href="{{video.url}}" class="video_btn"><i class="fa fa-play" aria-hidden="true"></i></a>
                         </div>
                     </div>
                 </div>
@@ -270,18 +234,23 @@
         <div class="container">
             <div class="row">
                 <!-- Single Cool Fact-->
-                <div class="col-12 col-md-3 col-lg-3">
-                    <div class="single-cool-fact d-flex justify-content-center wow fadeInUp" data-wow-delay="0.2s">
-                        <div class="counter-area">
-                            <h3><span class="counter">120</span></h3>
+                {% if enfeite %}
+                    {% for e in enfeite %}
+                        <div class="col-12 col-md-3 col-lg-3">
+                            <div class="single-cool-fact d-flex justify-content-center wow fadeInUp" data-wow-delay="0.2s">
+                                <div class="counter-area">
+                                    <h3><span class="counter">{{e.numero}}</span></h3>
+                                </div>
+                                <div class="cool-facts-content">
+                                    <i class="{{enfeite.icon}}"></i>
+                                    {{e.titulo}}
+                                </div>
+                            </div>
                         </div>
-                        <div class="cool-facts-content">
-                            <i class="ion-arrow-down-a"></i>
-                            <p>Projetos <br> Concluídos</p>
-                        </div>
-                    </div>
-                </div>
+                    {% endfor %}
+                {% endif %}
                 <!-- Single Cool Fact-->
+                <!--
                 <div class="col-12 col-md-3 col-lg-3">
                     <div class="single-cool-fact d-flex justify-content-center wow fadeInUp" data-wow-delay="0.4s">
                         <div class="counter-area">
@@ -293,7 +262,9 @@
                         </div>
                     </div>
                 </div>
+                -->
                 <!-- Single Cool Fact-->
+                 <!--
                 <div class="col-12 col-md-3 col-lg-3">
                     <div class="single-cool-fact d-flex justify-content-center wow fadeInUp" data-wow-delay="0.6s">
                         <div class="counter-area">
@@ -305,7 +276,9 @@
                         </div>
                     </div>
                 </div>
+                -->
                 <!-- Single Cool Fact-->
+                 <!--
                 <div class="col-12 col-md-3 col-lg-3">
                     <div class="single-cool-fact d-flex justify-content-center wow fadeInUp" data-wow-delay="0.8s">
                         <div class="counter-area">
@@ -317,6 +290,7 @@
                         </div>
                     </div>
                 </div>
+                -->
             </div>
         </div>
     </section>
@@ -530,102 +504,41 @@
                 <div class="col-12 col-md-10">
                     <div class="slider slider-for">
                         <!-- Client Feedback Text  -->
-                        <div class="client-feedback-text text-center">
-                            <div class="client">
-                                <i class="fa fa-quote-left" aria-hidden="true"></i>
-                            </div>
-                            <div class="client-description text-center">
-                                <p>“ Nostra habitant pulvinar donec ut ante litora egestas, tristique ut adipiscing maecenas interdum metus ullamcorper habitant, nunc dapibus tincidunt felis primis aenean.  ”</p>
-                            </div>
-                            <div class="star-icon text-center">
-                                <i class="ion-ios-star"></i>
-                                <i class="ion-ios-star"></i>
-                                <i class="ion-ios-star"></i>
-                                <i class="ion-ios-star"></i>
-                                <i class="ion-ios-star"></i>
-                            </div>
-                            <div class="client-name text-center">
-                                <h5>Maria</h5>
-                                <p>Diretora Academia Fitness</p>
-                            </div>
-                        </div>
-                        <!-- Client Feedback Text  -->
-                        <div class="client-feedback-text text-center">
-                            <div class="client">
-                                <i class="fa fa-quote-left" aria-hidden="true"></i>
-                            </div>
-                            <div class="client-description text-center">
-                                <p>“ Lorem ipsum sapien luctus vehicula magna dapibus proin nisl sed, pretium non lacinia conubia posuere at habitasse sem, amet litora id quisque turpis metus scelerisque ante. leo purus rutrum urna orci dictum curae torquent metus quisque lobortis.  ”</p>
-                            </div>
-                            <div class="star-icon text-center">
-                                <i class="ion-ios-star"></i>
-                                <i class="ion-ios-star"></i>
-                                <i class="ion-ios-star"></i>
-                                <i class="ion-ios-star"></i>
-                                <i class="ion-ios-star"></i>
-                            </div>
-                            <div class="client-name text-center">
-                                <h5>Suzana</h5>
-                                <p>Nutricionista</p>
-                            </div>
-                        </div>
-                        <!-- Client Feedback Text  -->
-                        <div class="client-feedback-text text-center">
-                            <div class="client">
-                                <i class="fa fa-quote-left" aria-hidden="true"></i>
-                            </div>
-                            <div class="client-description text-center">
-                                <p>“ Nostra habitant pulvinar donec ut ante litora egestas, tristique ut adipiscing maecenas interdum metus ullamcorper habitant, nunc dapibus tincidunt felis primis aenean.”</p>
-                            </div>
-                            <div class="star-icon text-center">
-                                <i class="ion-ios-star"></i>
-                                <i class="ion-ios-star"></i>
-                                <i class="ion-ios-star"></i>
-                                <i class="ion-ios-star"></i>
-                                <i class="ion-ios-star"></i>
-                            </div>
-                            <div class="client-name text-center">
-                                <h5>Zaza</h5>
-                                <p>Bixão MEMU</p>
-                            </div>
-                        </div>
-                        <!-- Client Feedback Text  -->
-                        <div class="client-feedback-text text-center">
-                            <div class="client">
-                                <i class="fa fa-quote-left" aria-hidden="true"></i>
-                            </div>
-                            <div class="client-description text-center">
-                                <p>“ Lorem ipsum sapien luctus vehicula magna dapibus proin nisl sed, pretium non lacinia conubia posuere at habitasse sem, amet litora id quisque turpis metus scelerisque ante. leo purus rutrum urna orci dictum curae torquent metus quisque lobortis.  ”</p>
-                            </div>
-                            <div class="star-icon text-center">
-                                <i class="ion-ios-star"></i>
-                                <i class="ion-ios-star"></i>
-                                <i class="ion-ios-star"></i>
-                                <i class="ion-ios-star"></i>
-                                <i class="ion-ios-star"></i>
-                            </div>
-                            <div class="client-name text-center">
-                                <h5>Chele</h5>
-                                <p>Amor do Zaza</p>
-                            </div>
-                        </div>
+                        {% if depoimento %}
+                            {% for d in depoimento %}
+                                <div class="client-feedback-text text-center">
+                                    <div class="client">
+                                        <i class="fa fa-quote-left" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="client-description text-center">
+                                        {{d.descricao | safe}}
+                                    </div>
+                                    <div class="star-icon text-center">
+                                        <i class="ion-ios-star"></i>
+                                        <i class="ion-ios-star"></i>
+                                        <i class="ion-ios-star"></i>
+                                        <i class="ion-ios-star"></i>
+                                        <i class="ion-ios-star"></i>
+                                    </div>
+                                    <div class="client-name text-center">
+                                        <h5>{{d.nome}}</h5>
+                                        <p>{{d.cargo}}</p>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            {% endif %}
                     </div>
                 </div>
                 <!-- Client Thumbnail Area -->
                 <div class="col-12 col-md-6 col-lg-5">
                     <div class="slider slider-nav">
-                        <div class="client-thumbnail">
-                            <img src="{% static '/img/bg-img/client-3.jpg' %}" alt="">
-                        </div>
-                        <div class="client-thumbnail">
-                            <img src="{% static '/img/bg-img/client-2.jpg' %}" alt="">
-                        </div>
-                        <div class="client-thumbnail">
-                            <img src="{% static '/img/bg-img/client-1.jpg' %}" alt="">
-                        </div>
-                        <div class="client-thumbnail">
-                            <img src="{% static '/img/bg-img/client-2.jpg' %}" alt="">
-                        </div>
+                        {% if depoimento %}
+                            {% for d in depoimento %}
+                                <div class="client-thumbnail">
+                                    <img src="{{d.imagem.url}}" alt="">
+                                </div>
+                            {% endfor %}
+                        {% endif %}
                     </div>
                 </div>
             </div>
@@ -666,82 +579,29 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-12 col-md-6 col-lg-3">
-                    <div class="single-team-member">
-                        <div class="member-image">
-                            <img src="{% static '/img/team-img/team-1.jpg' %}" alt="">
-                            <div class="team-hover-effects">
-                                <div class="team-social-icon">
-                                    <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                    <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                                    <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-                                    <a href="#"> <i class="fa fa-instagram" aria-hidden="true"></i></a>
+                {% if time %}
+                    {% for t in time %}
+                        <div class="col-12 col-md-6 col-lg-3">
+                            <div class="single-team-member">
+                                <div class="member-image">
+                                    <img src="{{t.imagem.url}}" alt="">
+                                    <div class="team-hover-effects">
+                                        <div class="team-social-icon">
+                                            <a href="{{t.face}}"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                            <a href="{{t.twitter}}"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                            <a href="{{t.google}}"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                                            <a href="{{t.instagram}}"> <i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="member-text">
+                                    <h4>{{t.nome}}</h4>
+                                    <p>{{t.cargo}}</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="member-text">
-                            <h4>Maria</h4>
-                            <p>Presidente</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-3">
-                    <div class="single-team-member">
-                        <div class="member-image">
-                            <img src="{% static '/img/team-img/team-2.jpg' %}" alt="">
-                            <div class="team-hover-effects">
-                                <div class="team-social-icon">
-                                    <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                    <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                                    <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-                                    <a href="#"> <i class="fa fa-instagram" aria-hidden="true"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="member-text">
-                            <h4>Marcos</h4>
-                            <p>Negócios</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-3">
-                    <div class="single-team-member">
-                        <div class="member-image">
-                            <img src="{% static '/img/team-img/team-3.jpg' %}" alt="">
-                            <div class="team-hover-effects">
-                                <div class="team-social-icon">
-                                    <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                    <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                                    <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-                                    <a href="#"> <i class="fa fa-instagram" aria-hidden="true"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="member-text">
-                            <h4>Prudence</h4>
-                            <p>Faz nada</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-3">
-                    <div class="single-team-member">
-                        <div class="member-image">
-                            <img src="{% static '/img/team-img/team-4.jpg' %}" alt="">
-                            <div class="team-hover-effects">
-                                <div class="team-social-icon">
-                                    <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                    <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                                    <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-                                    <a href="#"> <i class="fa fa-instagram" aria-hidden="true"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="member-text">
-                            <h4>Marcao</h4>
-                            <p>Ocupando Espaço</p>
-                        </div>
-                    </div>
-                </div>
+                    {% endfor %}
+                {% endif %}
             </div>
         </div>
     </section>
