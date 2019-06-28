@@ -1,5 +1,8 @@
 from django.shortcuts import render
 from core.models import Apresentacao, Servico, Video, Enfeite, Depoimento, Time
+from django.http import HttpResponseRedirect
+from django.core.mail import send_mail
+from django.core.mail import EmailMultiAlternatives
 
 # Create your views here.
 def index(request):
@@ -20,3 +23,25 @@ def index(request):
         'time': time,
     }
     return render(request, 'core/index.html', context=context)
+
+def email(request):
+    nome = request.POST.get('name', '')
+    email = request.POST.get('email', '')
+    msg = request.POST.get('message', '')
+
+    #subject, from_email, to = nome, email, 'isaiasbd@hotmail.com'
+    #text_content = msg
+    #msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
+    #msg.send()
+
+    #return render(request, 'core/index.html')
+    if nome and msg and email:
+        try:
+            send_mail(nome, msg, email, ['isaiasbd@hotmail.com'])
+        except BadHeaderError:
+            return HttpResponse('Invalid header found.')
+        return HttpResponseRedirect('../')
+    else:
+        # In reality we'd use a form class
+        # to get proper validation errors.
+        return HttpResponse('Make sure all fields are entered and valid.')

@@ -25,5 +25,6 @@ from core import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
+    path('send_email/', views.email, name='email'),
     path('tinymce/', include('tinymce.urls'))
 ]  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

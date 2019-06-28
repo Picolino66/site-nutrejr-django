@@ -241,9 +241,9 @@
                                 <div class="counter-area">
                                     <h3><span class="counter">{{e.numero}}</span></h3>
                                 </div>
-                                <div class="cool-facts-content">
-                                    <i class="{{enfeite.icon}}"></i>
-                                    {{e.titulo}}
+                                <div class="cool-facts-content text-center">
+                                    <i class="{{e.icon}}"></i>
+                                    <p>{{e.titulo}}</p>
                                 </div>
                             </div>
                         </div>
@@ -504,7 +504,9 @@
                 <div class="col-12 col-md-10">
                     <div class="slider slider-for">
                         <!-- Client Feedback Text  -->
-                        {% if depoimento %}
+                      <div class="client-feedback-text text-center">
+                        </div>
+                      {% if depoimento %}
                             {% for d in depoimento %}
                                 <div class="client-feedback-text text-center">
                                     <div class="client">
@@ -532,6 +534,8 @@
                 <!-- Client Thumbnail Area -->
                 <div class="col-12 col-md-6 col-lg-5">
                     <div class="slider slider-nav">
+                        <div class="client-thumbnail">
+                            </div>
                         {% if depoimento %}
                             {% for d in depoimento %}
                                 <div class="client-thumbnail">
@@ -633,7 +637,7 @@
                 <div class="col-md-6">
                     <!-- Form Start-->
                     <div class="contact_from">
-                        <form action="#" method="post">
+                        <form action="send_email/" name='mensagem' id='mensagem' method="post">{% csrf_token %} 
                             <!-- Message Input Area Start -->
                             <div class="contact_input_area">
                                 <div class="row">
