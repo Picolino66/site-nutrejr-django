@@ -3,6 +3,7 @@ from core.models import Apresentacao, Servico, Video, Enfeite, Depoimento, Time
 from django.http import HttpResponseRedirect
 from django.core.mail import send_mail
 from django.core.mail import EmailMultiAlternatives
+import sweetify
 
 # Create your views here.
 def index(request):
@@ -40,6 +41,7 @@ def email(request):
             send_mail(nome, msg, email, ['isaiasbd@hotmail.com'])
         except BadHeaderError:
             return HttpResponse('Invalid header found.')
+        sweetify.info(request, 'Message sent', button='Ok', timer=3000)
         return HttpResponseRedirect('../')
     else:
         # In reality we'd use a form class

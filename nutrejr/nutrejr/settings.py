@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'nutrejr',
     'core',
     'stdimage',
-    'tinymce'
+    'tinymce',
+    'sweetify'
 ]
 
 MIDDLEWARE = [
@@ -134,3 +135,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+SWEETIFY_SWEETALERT_LIBRARY = 'sweetalert2'
