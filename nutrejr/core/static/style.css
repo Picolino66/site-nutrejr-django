@@ -766,7 +766,12 @@ p {
     right: 0;
     width: 100%;
     height: 100px;
-    background-color: #fff;
+    background: #01995D;
+    background: -webkit-linear-gradient(to left, #53cbb9, #01995D);
+    background: -webkit-linear-gradient(right, #53cbb9, #01995D);
+    background: -webkit-gradient(linear, right top, left top, from(#53cbb9), to(#01995D));
+    background: -o-linear-gradient(right, #53cbb9, #01995D);
+    background: linear-gradient(to left, #53cbb9, #01995D);
     content: ''
 }
 
@@ -919,7 +924,12 @@ p {
 /* --------------------------
 :: 10.0 Testimonials Area CSS
 -------------------------- */
-
+.clients-feedback-area{
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(https://st3.depositphotos.com/5697630/13647/i/1600/depositphotos_136470488-stock-photo-healthy-food-background-healthy-food.jpg);
+}
 .clients-feedback-area .client-name > h5 {
     color: #000000;
     font-size: 22px;

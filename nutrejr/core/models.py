@@ -7,7 +7,10 @@ from stdimage.models import StdImageField
 class Apresentacao(models.Model):
     descricao = HTMLField('Descrição',)
     imagem = StdImageField('Imagem', upload_to='apresentacao')
-
+    missao = HTMLField('Missao',)
+    valores = HTMLField('Valores',)
+    visao = HTMLField('Visao',)
+    
     class Meta:
         verbose_name = 'Apresentacao'
         verbose_name_plural = 'Apresentacoes'
@@ -18,7 +21,7 @@ class Apresentacao(models.Model):
 class Servico(models.Model):
     titulo = models.CharField('Titulo', max_length=100)
     descricao = HTMLField('Descrição',)
-    icon = models.CharField('Icone', max_length=100)
+    icon = StdImageField('Icone', upload_to='servico')
     
     class Meta:
         verbose_name = 'Servico'
@@ -77,3 +80,28 @@ class Time(models.Model):
 
     def __str__(self):
         return self.nome
+
+class Parceiro(models.Model):
+    nome = models.CharField('Nome', max_length=100)
+    url = models.CharField('Url', max_length=100)
+    imagem = StdImageField('Imagem', upload_to='parceiro')
+
+    class Meta:
+        verbose_name = 'Parceiro'
+        verbose_name_plural = 'Parceiros'
+
+    def __str__(self):
+        return self.nome
+
+class Galeria(models.Model):
+    titulo = models.CharField('Titulo', max_length=100)
+    descricao = HTMLField('Descrição',)
+    imagem = StdImageField('Imagem', upload_to='galeroa')
+    url = models.CharField('Url', max_length=100)
+    
+    class Meta:
+        verbose_name = 'Galeria'
+        verbose_name_plural = 'Galerias'
+
+    def __str__(self):
+        return self.titulo

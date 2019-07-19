@@ -3,10 +3,14 @@ django-stdimage==4.0.1
 django-tinymce4-lite==1.7.5
 jsmin==2.2.2
 Pillow==6.0.0
-pkg-resources==0.0.0
 progressbar2==3.42.0
-psycopg2==2.8.2
+#sudo apt install libpq-dev python3-dev
+#sudo apt install postgresql-server-dev-all
+#psycopg2==2.8.2
 python-utils==2.3.0
 pytz==2019.1
 six==1.12.0
 sqlparse==0.3.0
+
+
+#icones http://demo.uncommons.pro/themes/wp/juno/demo7/ion-icons/
