@@ -16,6 +16,7 @@ def index(request):
     time = Time.objects.all()
     parceiro = Parceiro.objects.all()
     galeria = Galeria.objects.all()
+    cont_par = 0
     context = {
         'apresentacao': Apresentacao.objects.last(),
         'servico': servico,

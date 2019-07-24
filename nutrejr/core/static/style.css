@@ -81,6 +81,13 @@ h6 {
     padding-bottom: 50px;
 }
 
+
+
+.section_padding_50_100 {
+    padding-top: 50px;
+    padding-bottom: 100px;
+}
+
 .section_padding_50_20 {
     padding-top: 50px;
     padding-bottom: 20px;
@@ -243,12 +250,32 @@ p {
     margin: 0;
 }
 
-
 .section-heading {
     margin-bottom: 60px;
 }
 
-.line-shape-white,
+.section-heading-white > h2 {
+    font-weight: 300;
+    color: #ffffff;
+    font-size: 48px;
+    margin: 0;
+}
+
+.section-heading-white {
+    margin-bottom: 60px;
+}
+
+.line-shape-white{
+    width: 80px;
+    height: 2px;
+    background-color: #ffffff;
+    margin-top: 15px;  
+}
+
+.line-shape-white {
+    margin-left: calc(50% - 40px);
+}
+
 .line-shape {
     width: 80px;
     height: 2px;
@@ -433,7 +460,7 @@ p {
 .wellcome_area {
     /* background-image: url(img/bg-img/welcome-bg.png);*/
     background-color: #01995D;
-    height: 600px;
+    height: 300px;
     position: relative;
     z-index: 1;
     background-position: bottom center;
@@ -921,7 +948,7 @@ p {
     background-image: linear-gradient(rgba(0, 0, 0, 0.671), rgba(0, 0, 0, 0.671)),url(https://st3.depositphotos.com/5697630/13647/i/1600/depositphotos_136470488-stock-photo-healthy-food-background-healthy-food.jpg);
 }
 .clients-feedback-area .client-name > h5 {
-    color: #000000;
+    color: #ffffff;
     font-size: 22px;
     margin-top: 5px;
 }
@@ -936,6 +963,7 @@ p {
     margin: auto;
     margin-bottom: 15px;
     font-size: 22px;
+    color: #ffffff;
 }
 
 .clients-feedback-area .client > i {
@@ -1011,7 +1039,6 @@ p {
 .clients-feedback-area .slick-arrow {
     position: absolute;
     width: 30px;
-    background-color: #fff;
     height: 100%;
     text-align: center;
     font-size: 24px;
@@ -1038,7 +1065,9 @@ p {
 
 
 .our-monthly-membership {
-    position: relative;
+    background: #f5f9fc;
+}   
+    /*    position: relative;
     z-index: auto;
     background: #01995D;
     background: -webkit-linear-gradient(to left, #53cbb9, #01995D);
@@ -1061,7 +1090,7 @@ p {
     background: -o-linear-gradient(right, #53cbb9, #01995D);
     background: linear-gradient(to left, #53cbb9, #01995D);
 }
-
+*/
 .membership-description > h2 {
     color: #ffffff;
     font-size: 36px;
@@ -1313,4 +1342,135 @@ p {
 
 .copyright-text > p {
     margin-bottom: 0;
+}
+/*
+    code by Iatek LLC 2018 - CC 2.0 License - Attribution required
+    code customized by Azmind.com
+*/
+@media (min-width: 768px) and (max-width: 991px) {
+    /* Show 4th slide on md if col-md-4*/
+    .carousel-inner-new .active.col-md-4.carousel-item-new + .carousel-item-new + .carousel-item-new + .carousel-item-new {
+        position: absolute;
+        top: 0;
+        right: -33.3333%;  /*change this with javascript in the future*/
+        z-index: -1;
+        display: block;
+        visibility: visible;
+    }
+}
+@media (min-width: 576px) and (max-width: 768px) {
+    /* Show 3rd slide on sm if col-sm-6*/
+    .carousel-inner-new .active.col-sm-6.carousel-item-new + .carousel-item-new + .carousel-item-new {
+        position: absolute;
+        top: 0;
+        right: -50%;  /*change this with javascript in the future*/
+        z-index: -1;
+        display: block;
+        visibility: visible;
+    }
+}
+@media (min-width: 576px) {
+    .carousel-item-new {
+        margin-right: 0;
+    }
+    /* show 2 items */
+    .carousel-inner-new .active + .carousel-item-new {
+        display: block;
+    }
+    .carousel-inner-new .carousel-item-new.active:not(.carousel-item-new-right):not(.carousel-item-new-left),
+    .carousel-inner-new .carousel-item-new.active:not(.carousel-item-new-right):not(.carousel-item-new-left) + .carousel-item-new {
+        transition: none;
+    }
+    .carousel-inner-new .carousel-item-new-next {
+        position: relative;
+        transform: translate3d(0, 0, 0);
+    }
+    /* left or forward direction */
+    .active.carousel-item-new-left + .carousel-item-new-next.carousel-item-new-left,
+    .carousel-item-new-next.carousel-item-new-left + .carousel-item-new,
+    .carousel-item-new-next.carousel-item-new-left + .carousel-item-new + .carousel-item-new {
+        position: relative;
+        transform: translate3d(-100%, 0, 0);
+        visibility: visible;
+    }
+    /* farthest right hidden item must be also positioned for animations */
+    .carousel-inner-new .carousel-item-new-prev.carousel-item-new-right {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        display: block;
+        visibility: visible;
+    }
+    /* right or prev direction */
+    .active.carousel-item-new-right + .carousel-item-new-prev.carousel-item-new-right,
+    .carousel-item-new-prev.carousel-item-new-right + .carousel-item-new,
+    .carousel-item-new-prev.carousel-item-new-right + .carousel-item-new + .carousel-item-new {
+        position: relative;
+        transform: translate3d(100%, 0, 0);
+        visibility: visible;
+        display: block;
+        visibility: visible;
+    }
+}
+/* MD */
+@media (min-width: 768px) {
+    /* show 3rd of 3 item slide */
+    .carousel-inner-new .active + .carousel-item-new + .carousel-item-new {
+        display: block;
+    }
+    .carousel-inner-new .carousel-item-new.active:not(.carousel-item-new-right):not(.carousel-item-new-left) + .carousel-item-new + .carousel-item-new {
+        transition: none;
+    }
+    .carousel-inner-new .carousel-item-new-next {
+        position: relative;
+        transform: translate3d(0, 0, 0);
+    }
+    /* left or forward direction */
+    .carousel-item-new-next.carousel-item-new-left + .carousel-item-new + .carousel-item-new + .carousel-item-new {
+        position: relative;
+        transform: translate3d(-100%, 0, 0);
+        visibility: visible;
+    }
+    /* right or prev direction */
+    .carousel-item-new-prev.carousel-item-new-right + .carousel-item-new + .carousel-item-new + .carousel-item-new {
+        position: relative;
+        transform: translate3d(100%, 0, 0);
+        visibility: visible;
+        display: block;
+        visibility: visible;
+    }
+}
+/* LG */
+@media (min-width: 991px) {
+    /* show 4th item */
+    .carousel-inner-new .active + .carousel-item-new + .carousel-item-new + .carousel-item-new {
+        display: block;
+    }
+    .carousel-inner-new .carousel-item-new.active:not(.carousel-item-new-right):not(.carousel-item-new-left) + .carousel-item-new + .carousel-item-new + .carousel-item-new {
+        transition: none;
+    }
+    /* Show 5th slide on lg if col-lg-3 */
+    .carousel-inner-new .active.col-lg-3.carousel-item-new + .carousel-item-new + .carousel-item-new + .carousel-item-new + .carousel-item-new {
+        position: absolute;
+        top: 0;
+        right: -25%;  /*change this with javascript in the future*/
+        z-index: -1;
+        display: block;
+        visibility: visible;
+    }
+    /* left or forward direction */
+    .carousel-item-new-next.carousel-item-new-left + .carousel-item-new + .carousel-item-new + .carousel-item-new + .carousel-item-new {
+        position: relative;
+        transform: translate3d(-100%, 0, 0);
+        visibility: visible;
+    }
+    /* right or prev direction //t - previous slide direction last item animation fix */
+    .carousel-item-new-prev.carousel-item-new-right + .carousel-item-new + .carousel-item-new + .carousel-item-new + .carousel-item-new {
+        position: relative;
+        transform: translate3d(100%, 0, 0);
+        visibility: visible;
+        display: block;
+        visibility: visible;
+    }
 }
