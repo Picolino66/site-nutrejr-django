@@ -96,7 +96,7 @@ class Parceiro(models.Model):
 class Galeria(models.Model):
     titulo = models.CharField('Titulo', max_length=100)
     descricao = HTMLField('Descrição',)
-    imagem = StdImageField('Imagem', upload_to='galeroa')
+    imagem = StdImageField('Imagem', upload_to='galeria')
     url = models.CharField('Url', max_length=100)
     
     class Meta:
