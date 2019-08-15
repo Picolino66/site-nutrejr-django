@@ -287,9 +287,12 @@
                     <div class="app_screenshots_slides owl-carousel">
                         {% if galeria %}
                             {% for g in galeria %}
-                                <div class="single-shot">
-                                    <a href="{{g.url}}"><img src="{{g.imagem.url}}" alt=""></a>
-                                        {{g.descricao | safe}}
+                                <div class="imagem">
+                                 <a href="{{g.url}}"><img src="{{g.imagem.url}}" alt=""></a>
+                                 <div class="capa">
+                                   <h1>{{g.titulo}}</h1>
+                                   <p>{{g.descricao | safe}}</p>
+                                 </div>
                                 </div>
                             {% endfor %}
                         {% endif %}
