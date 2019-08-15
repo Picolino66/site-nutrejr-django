@@ -279,25 +279,21 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="container-fluid">
             <div class="row">
-                <div class="col-12">
-                    <!-- App Screenshots Slides  -->
-                    <div class="app_screenshots_slides owl-carousel">
-                        {% if galeria %}
-                            {% for g in galeria %}
-                                <div class="imagem">
-                                 <a href="{{g.url}}"><img src="{{g.imagem.url}}" alt=""></a>
-                                 <div class="capa">
-                                   <h1>{{g.titulo}}</h1>
-                                   <p>{{g.descricao | safe}}</p>
-                                 </div>
+            <!-- App Screenshots Slides  -->
+                {% if galeria %}
+                    {% for g in galeria %}
+                        <div class="col-12 col-md-6 col-lg-3">
+                            <div class="imagem">
+                                <a href="{{g.url}}"><img src="{{g.imagem.url}}" alt=""></a>
+                                <div class="capa">
+                                    <h1>{{g.titulo}}</h1>
+                                    <p>{{g.descricao | safe}}</p>
                                 </div>
-                            {% endfor %}
-                        {% endif %}
-                    </div>
-                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% endif %}
             </div>
         </div>
 <!-- Top content 
