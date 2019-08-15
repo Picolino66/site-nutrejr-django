@@ -45,7 +45,7 @@
 }
 
 body {
-    font-family: 'Cabin', sans-serif;
+    font-family: 'Century', sans-serif;
     background-color: #fff;
 }
 
@@ -55,7 +55,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Cabin', sans-serif;
+    font-family: 'Century', sans-serif;
     font-weight: 400;
     color: #000;
     line-height: 1.2;
@@ -459,8 +459,8 @@ p {
 
 .wellcome_area {
     /* background-image: url(img/bg-img/welcome-bg.png);*/
-    background-color: #01995c;
-    height: 300px;
+    /* background-color: #01995c; */
+    height: 300px;  
     position: relative;
     z-index: 1;
     background-position: bottom center;
